@@ -4,6 +4,7 @@ const cors = require('cors')();
 const BASE_MAPS_URL = 'https://maps.googleapis.com/maps/api/';
 const API_KEY = 'AIzaSyCcWQftr51E8GZR0nFG2N207HZm8cLIM2Y';
 admin.initializeApp(functions.config().firebase);
+const client = require('superagent');
 
 exports.getPlacesByTextSearch = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
