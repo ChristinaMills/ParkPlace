@@ -18,8 +18,8 @@ exports.getGeocodeByQuery = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
     client.get(`${BASE_MAPS_URL}geocode/json?address=${req.query.query}&key=${API_KEY}`)
       .then(({ body }) => { 
-        const { lat, long } = body.results[0].geometry.location;    
-        res.json({ lat, long });
+        const { lat, lng } = body.results[0].geometry.location;    
+        res.json({ lat, lng });
       })
       .catch(error => {
         console.log(error);
