@@ -1,3 +1,5 @@
+Live here: https://park-place-pnw.firebaseapp.com/home
+
 Objective
 ===
 
@@ -33,3 +35,7 @@ Reflection / Changes
 This app was a huge learning experience! We did not realize prior to starting that google places API has CORS issues with front-end requests, so we had to proxy requests through google cloud functions. Creating a cloud function to display aggregate data from user reviews was quite challenging. It required high attention to how user input was filtered / formatted prior to sending to firebase. In hindsight, this could've been accomplished with better limitations on form input.
 
 Working with firebase to format data was very on-the-fly for this project. Unfortunately, this lead to limitations further down the road, such as users not being able to edit their user information after creation. In the future, it is better to keep data in firebase very flat with references to where other pieces of data exists, instead of deeply nesting repetitive data.
+
+**Update 4/21/18:**
+
+Reformatted Firebase to be much flatter, with reviews separated from users and parks with their own keys. Each review now fetches its own data.
