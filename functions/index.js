@@ -13,7 +13,6 @@ exports.getPlacesByTextSearch = functions.https.onRequest((req, res) => {
   });
 });
 
-
 exports.getGeocodeByQuery = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
     client.get(`${BASE_MAPS_URL}geocode/json?address=${req.query.query}&key=${API_KEY}`)
